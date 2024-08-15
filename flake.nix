@@ -1,0 +1,17 @@
+{
+  description = "fava";
+
+  # Add all your dependencies here
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs?ref=nixos-unstable";
+    blueprint.url = "github:numtide/blueprint";
+    blueprint.inputs.nixpkgs.follows = "nixpkgs";
+  };
+
+  outputs = inputs:
+    inputs.blueprint {
+      inherit inputs;
+      nixpkgs.config.allowUnfree = true;
+      prefix = "nix/";
+    };
+}
