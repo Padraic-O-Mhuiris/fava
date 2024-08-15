@@ -17,7 +17,7 @@ def test_get_locale_format() -> None:
     locale = Locale.parse("da_DK")
     dec = Decimal("1.00")
     fmt = get_locale_format(locale, 100)
-    assert fmt(dec) == "1,00000000000000"
+    assert fmt(dec) == "1,000000000000000000"
     fmt = get_locale_format(locale, 14)
     assert fmt(dec) == "1,00000000000000"
 

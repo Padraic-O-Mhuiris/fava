@@ -28,8 +28,8 @@ def get_locale_format(locale: Locale | None, precision: int) -> Formatter:
     Returns:
         A function that renders Decimals to strings as desired.
     """
-    # Set a maximum precision of 14, half the default precision of Decimal
-    precision = min(precision, 14)
+    # Set a maximum precision of 18, half the default precision of Decimal
+    precision = min(precision, 18)
     if locale is None:
         fmt_string = "{:." + str(precision) + "f}"
 
